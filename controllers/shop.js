@@ -1,13 +1,14 @@
 const { Card } = require('../models/index')
 
 class Shop {
-  static async show(_, res) {
+  static async show(req, res) {
     try {
       const cards = await Card.findAll()
+      const isLogin = req.session.UserId
 
-      console.log(cards)
       res.render('shop', {
-        cards
+        cards,
+        isLogin
       })
     } catch (error) {
       res.send(error)

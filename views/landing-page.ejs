@@ -4,12 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%- include('setup') %>
+  <link rel="stylesheet" href="/styles/landing-page.css">
   <title>Welcome - Barbie Card Shop</title>
 </head>
 <body>
   <%- include('navbar', { isLogin }) %>
   <section id="content">
-    <!-- Isi Contentnya -->
+    <div id="slider">
+      <h1>NEW CARDS</h1>
+      <div class="slider-container">
+        <div class="slider">
+          <img src="/images/7.jpg"alt="Image 1">
+          <img src="/images/2.jpg" alt="Image 2">
+          <img src="/images/3.jpg" alt="Image 3">
+          <img src="/images/4.jpg" alt="Image 4">
+          <img src="/images/8.jpg" alt="Image 5">
+          <img src="/images/6.jpg" alt="Image 6">
+          <img src="/images/11.jpg" alt="Image 9">
+        </div>
+        <button id="prev" class="arrow-button">&#9664;</button>
+        <button id="next" class="arrow-button">&#9654;</button> 
+      </div>
+    </div>
+    <div id="background">
+      <h1>UNIVERSE</h1>
+      <p> 
+        Rizky, the king of the Rambutan, heard the voices of the ancients.
+        In order to bring the ancients into this world, he planned to open the Rift of Worlds and started a war.
+        However, the war ended abruptly when he was sucked into the unstable rift.
+        With Rizky's disappearance, Rihzkil Kingdom seemed to regain peace.
+        But one day, this precarious peace, riddled with the scars of war, began to crumble
+        as rumors that Rizky had returned started to spread.
+        The King of Rihzkil is looking for a Summoner to protect the kingdom against Rizky's enormous conspiracy.
+        Your story of defending the kingdom as a Rihzkil Guard begins now.
+      </p>
+    </div>
   </section>
+  <script src="/scripts/slider.js"></script>
 </body>
 </html>

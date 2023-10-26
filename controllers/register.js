@@ -4,9 +4,11 @@ class Register {
   static show(req, res) {
     try {
       const isLogin = req.session.UserId
-
+      const err = req.query.err ? req.query.err.split(',') : ""
+      
       res.render('register-page', {
-        isLogin
+        isLogin,
+        error: err
       })
     } catch (error) {
       res.send(error)
@@ -19,7 +21,12 @@ class Register {
 
       res.redirect('/')
     } catch (error) {
-      res.send(error)
+      if(error.name === "SequelizeValidationError") {
+        const err = error.errors.map(msg => msg.message)
+        res.redirect(`/register?err=${err}`)
+      } else {
+        res.send(error)
+      }
     }
   }
 }

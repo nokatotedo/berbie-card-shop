@@ -1,0 +1,85 @@
+body {
+  background-image: url('/images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#slider h1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  color: var(--secondary);
+}
+
+.slider-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto; 
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s;
+  position: relative;
+}
+
+.slider img {
+  width: 400px;
+  height: 80vh;
+  object-fit: cover;
+}
+
+.arrow-button {
+  position: absolute;
+  top: 50%; 
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 20px;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+#prev {
+  left: 0;
+}
+
+#next {
+  right: 0;
+}
+
+#slider {
+  margin-bottom: 20px;
+}
+
+#background {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--secondary);
+  border-radius: 10px;
+  position: relative;
+}
+
+#background::after {
+  content: "❜❜";
+  font-size: 200px;
+  color: white;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  text-align: end;
+  margin-top: -80px;
+  margin-right: 10px;
+  position: absolute;
+}
+
+#background p, #background h1 {
+  color: white;
+  white-space: pre-line;
+}

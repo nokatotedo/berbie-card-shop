@@ -1,4 +1,5 @@
 'use strict';
+const { toCapitalize } = require('../helpers/helper')
 const {
   Model
 } = require('sequelize');
@@ -14,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
       Card.belongsToMany(models.UserProfile, {
         through: 'UserCard'
       })
+    }
+
+    get nameCapitalize() {
+      return toCapitalize(this.name)
     }
   }
   Card.init({

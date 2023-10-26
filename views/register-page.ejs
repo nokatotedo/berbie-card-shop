@@ -4,17 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%- include('setup') %>
+  <link rel="stylesheet" href="/styles/form-page.css">
   <title>Login - Barbie Card Shop</title>
 </head>
 <body>
   <%- include('navbar', { isLogin }) %>
   <section id="content">
-    <!-- Isi Contentnya -->
     <form method="post">
-      <input type="text" name="username">
-      <input type="email" name="email">
-      <input type="password" name="password">
-      <input type="submit" value="Register">
+      <h1>REGISTER</h1>
+      <div class="username">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+      </div>
+      <div class="email">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email">
+      </div>
+      <div class="password">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+      </div>
+      <% if(error) { %>
+        <div class="error">
+        <% error.forEach(err => { %>
+          <p>*<%= err %></p>
+        <% }); %>
+        </div>
+      <% } %>
+      <input type="submit" value="REGISTER" id="btn">
     </form>
   </section>
 </body>

@@ -8,13 +8,16 @@
   <title>Shop - Barbie Card Shop</title>
 </head>
 <body>
-  <%- include('navbar', { isLogin: true }) %>
-  <section>
-    <h3>Shop</h3>
+  <%- include('navbar', { isLogin }) %>
+  <section id="content">
+    <h1>SHOP</h1>
     <div class="card-available">
       <% cards.forEach(card => { %>
         <div class="card">
-          <img src="<%= card.image %>" alt="">
+          <img src="<%= card.image %>" alt="Photo of <%= card.nameCapitalize %>">
+          <a href="/shop/buy/<%= card.id %>">
+            <div class="buy-btn">BUY</div>
+          </a>
         </div>
       <% }); %>
     </div>
