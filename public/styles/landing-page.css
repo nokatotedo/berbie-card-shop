@@ -1,0 +1,53 @@
+body{
+    background-image: url('https://img.myloview.com/posters/beautiful-abstract-color-pink-texture-background-on-white-surface-granite-orange-and-pink-cloud-sky-on-art-graphics-pink-background-400-217554153.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* SLIDERR BOSKU */
+.slider-container {
+    padding-top: 50px;
+    position: relative;
+    max-width: 1200px; 
+    max-height: 100%;
+    margin: 0 auto; 
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px black;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s;
+    position: relative; 
+    width: 110%;
+    height: auto;
+}
+
+.slider img {
+    width: auto;
+    max-height: 100%;
+}
+
+.arrow-button {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 20px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
+
