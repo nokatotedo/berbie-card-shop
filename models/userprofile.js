@@ -1,5 +1,5 @@
 'use strict';
-const { toCapitalize, toIdr } = require('../helpers/formatter')
+const { toCapitalize, toIdr, generateRandom } = require('../helpers/helper')
 const {
   Model
 } = require('sequelize');
@@ -13,6 +13,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       UserProfile.belongsTo(models.User)
+      UserProfile.belongsToMany(models.Card, {
+        through: 'UserCard'
+      })
     }
 
     get nameCapitalize() {
@@ -31,11 +34,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     hooks: {
       beforeCreate: (user, _) => {
-        const images = Math.floor(Math.random() * 8) + 1
-
         user.name = user.name.toLowerCase()
         user.balance = 200_000
-        user.image = `/images/profile_${images}.png`
+        user.image = `/images/profile_${generateRandom(1, 8)}.png`
       }
     },
     sequelize,
