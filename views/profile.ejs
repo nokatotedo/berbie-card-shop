@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include('setup') %>
+  <link rel="stylesheet" href="/styles/profile.css">
+  <title>Profile - <%= user.nameCapitalize %></title>
+</head>
+<body>
+  <%- include('navbar', { isLogin: user.name }) %>
+  <section id="content">
+    <div class="card">
+      <div class="card-header"></div>
+      <div class="image-header">
+        <div class="image">
+          <img src="<%= user.image %>" alt="Photo of <%= user.nameCapitalize %>">
+        </div>
+        <div class="btn-edit">
+          <a href="/profile/edit">
+            <div class="btn">Edit Profile</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

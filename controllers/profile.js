@@ -1,8 +1,31 @@
+const { User, UserProfile } = require('../models/index')
+
 class Profile {
-  static show(_, res) {
+  static async show(req, res) {
     try {
-      res.send("Show Profile")
+      const UserId = req.session.UserId
+      const user = await User.findOne({
+        attributes: [
+          "id"
+        ],
+        where: {
+          id: UserId
+        },
+        include: {
+          model: UserProfile,
+          attributes: [
+            "name",
+            "balance",
+            "image"
+          ]
+        }
+      })
+
+      res.render('profile', {
+        user: user.UserProfile
+      })
     } catch (error) {
+      console.log(error)
       res.send(error)
     }
   }

@@ -7,8 +7,8 @@
   <title>Login - Barbie Card Shop</title>
 </head>
 <body>
-  <%- include('navbar') %>
-  <section>
+  <%- include('navbar', { isLogin }) %>
+  <section id="content">
     <!-- Isi Contentnya -->
     <form method="post">
       <input type="text" name="username">

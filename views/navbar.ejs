@@ -4,14 +4,23 @@
     <div id="title">Barbie</div></a></div>
   <div class="menu">
     <ul>
-      <li><a href="/shop">Shop</a></li>
-      <li><a href="/tournament">Tournament</a></li>
+      <li><a href="/shop" id="shop">Shop</a></li>
+      <li><a href="/tournament" id="tournament">Tournament</a></li>
     </ul>
   </div>
-  <div class="login">
-    <ul>
-      <li><a href="/login">Login</a></li>
-      <li><a href="/register">Register</a></li>
-    </ul>
-  </div>
+  <% if(!isLogin) { %>
+    <div class="login">
+      <ul>
+        <li><a href="/login" id="login">Login</a></li>
+        <li><a href="/register" id="register">Register</a></li>
+      </ul>
+    </div>
+  <% } else { %>
+    <div class="profile">
+      <ul>
+        <li><a href="/profile" id="profile">Profile</a></li>
+        <li><a href="/logout" id="logout">Logout</a></li>
+      </ul>
+    </div>
+  <% } %>
 </nav>

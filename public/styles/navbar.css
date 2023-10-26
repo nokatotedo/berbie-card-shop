@@ -66,16 +66,23 @@ nav a {
   transform: scaleX(1);
 }
 
-.login a {
+.login a, .profile a {
   background-color: transparent;
   padding: 5px 10px;
   border-radius: 10px;
   transition: 0.4s;
 }
 
-.login a:hover {
-  background-color: var(--white);
-  color: var(--secondary);
+.login a:hover, .profile a:hover {
   text-shadow: none;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.login a:hover, .profile #profile:hover {
+  background-color: var(--white);
+  color: var(--secondary);
+}
+
+.profile #logout:hover {
+  background-color: var(--red);
 }

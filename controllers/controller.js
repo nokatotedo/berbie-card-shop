@@ -5,9 +5,13 @@ const Tournament = require('./tournament')
 const Shop = require('./shop')
 
 class Controller {
-  static showLandingPage(_, res) {
+  static showLandingPage(req, res) {
     try {
-      res.render('landing-page')
+      const isLogin = req.session.UserId
+      
+      res.render('landing-page', {
+        isLogin
+      })
     } catch (error) {
       res.send(error)
     }

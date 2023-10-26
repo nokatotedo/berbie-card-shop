@@ -3,10 +3,12 @@ const { User } = require('../models/index')
 class Login {
   static show(req, res) {
     try {
-      const error = req.query?.error
+      const error = req.query.error
+      const isLogin = req.session.UserId
 
       res.render('login-page', {
-        error
+        error,
+        isLogin
       })
     } catch (error) {
       res.send(error)
@@ -21,6 +23,16 @@ class Login {
       res.redirect('/')
     } catch (error) {
       res.redirect(`/login?error=${error.message}`)
+    }
+  }
+
+  static async out(req, res) {
+    try {
+      req.session.destroy()
+      
+      res.redirect('/')
+    } catch (error) {
+      res.send(error)
     }
   }
 }
