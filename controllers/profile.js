@@ -1,4 +1,4 @@
-const { User, UserProfile } = require('../models/index')
+const { User, UserProfile, Card } = require('../models/index')
 
 class Profile {
   static async show(req, res) {
@@ -17,7 +17,8 @@ class Profile {
             "name",
             "balance",
             "image"
-          ]
+          ],
+          include: Card
         }
       })
 
@@ -25,7 +26,6 @@ class Profile {
         user: user.UserProfile
       })
     } catch (error) {
-      console.log(error)
       res.send(error)
     }
   }

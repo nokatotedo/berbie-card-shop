@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   UserCard.init({
-    UserId: DataTypes.INTEGER,
+    UserProfileId: DataTypes.INTEGER,
     CardId: DataTypes.INTEGER
   }, {
     sequelize,

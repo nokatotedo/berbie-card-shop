@@ -1,0 +1,11 @@
+.card-available {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+}

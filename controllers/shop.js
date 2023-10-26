@@ -1,7 +1,14 @@
+const { Card } = require('../models/index')
+
 class Shop {
-  static show(_, res) {
+  static async show(_, res) {
     try {
-      res.send("Show Shop")
+      const cards = await Card.findAll()
+
+      console.log(cards)
+      res.render('shop', {
+        cards
+      })
     } catch (error) {
       res.send(error)
     }

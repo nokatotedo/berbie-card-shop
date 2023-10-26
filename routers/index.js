@@ -17,6 +17,7 @@ const isLogin = function (req, res, next) {
 }
 
 router.get('/', Controller.showLandingPage)
+router.use('/shop', shop)
 
 router.use('/login', login)
 router.use('/register', register)
@@ -25,7 +26,6 @@ router.use(isLogin)
 
 router.use('/profile', profile)
 router.use('/tournament', tournament)
-router.use('/shop', shop)
 router.get('/logout', Login.out)
 
 module.exports = router

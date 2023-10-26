@@ -14,13 +14,20 @@ module.exports = {
      * }], {});
     */
     const cards = []
+    const imageIndex = []
     for(let i = 0; i < 10; i++) {
       const card = {}
       card.name = 'Barbie'
       card.description = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
       card.price = generateRandom(1_000, 10_000)
-      
-      card.image = `/images/${generateRandom(1, 17)}.jpg`
+
+      let index = generateRandom(1, 17)
+      while(imageIndex.includes(index)) {
+        index = generateRandom(1, 17)
+      }
+      imageIndex.push(index)
+
+      card.image = `/images/${index}.jpg`
       card.atk = generateRandom(1, 50)
       card.def = generateRandom(1, 50)
       card.stock = generateRandom(1, 10)
