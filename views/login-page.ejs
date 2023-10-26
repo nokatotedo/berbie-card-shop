@@ -4,18 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%- include('setup') %>
+  <link rel="stylesheet" href="/styles/login-page.css">
+
   <title>Login - Barbie Card Shop</title>
 </head>
 <body>
   <%- include('navbar') %>
   <section>
     <!-- Isi Contentnya -->
-    <form method="post">
-      <p><%= error %></p>
-      <input type="text" name="username">
-      <input type="password" name="password">
-      <input type="submit" value="Login">
-    </form>
+    <div class="text-container">
+      <div class="loginIcon"></div>
+      <form method="post">
+        <p><%= error %></p>
+        <p>USERNAME</p>
+        <input type="text" name="username" style="width: 400px; height: 30px;">
+        <br><br>
+        <p>PASSWORD</p>
+        <input type="password" name="password" style="width: 400px; height: 30px;">
+        <br>
+        <br>
+        <input type="submit" value="Login" style="width: 80px; height: 40px; background-color: rgb(112, 199, 219); color: black;">
+      </form>
+
+      <h3 class="storytext">
+      Please Read
+      </h3>
+      <p>
+        text here
+      </p>
+    </div>
   </section>
 </body>
 </html>

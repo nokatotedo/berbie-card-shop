@@ -119,4 +119,14 @@ body{
     text-decoration: underline;
 }
 
-
+.loginIcon {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    background-image: url('/assetsPhoto/Untitled\ design-2.png');    
+}
