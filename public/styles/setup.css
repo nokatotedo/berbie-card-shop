@@ -1,0 +1,22 @@
+:root {
+  --primary: #F8B8DE;
+  --secondary: #C757C9;
+  --black: #0D192A;
+  --white: #F1EFE5;
+  --red: #DB1818;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: var(--black);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
