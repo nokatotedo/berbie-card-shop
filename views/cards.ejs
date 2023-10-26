@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/styles/cards.css">
+
+<div class="card-available">
+  <% cards.forEach(card => { %>
+    <div class="card">
+      <h4><div class="name"><%= card.name %></div></h4>
+      <img src="<%= card.image %>" alt="Photo of <%= card.name %>">
+      <div class="statistic">
+        <div class="atk">ATK <%= card.atk %></div>
+        <div class="def">DEF <%= card.def %></div>
+      </div>
+      <% if(shop) { %>
+        <div class="price"><%= card.priceIdr %></div>
+        <a href="/shop/buy/<%= card.id %>">
+          <div class="buy-btn">BUY</div>
+        </a>
+      <% } else { %>
+        <a href="/profile/delete/<%= card.id %>">
+          <div class="delete-btn">
+            Delete
+          </div>
+        </a>
+      <% } %>
+    </div>
+  <% }); %>
+</div>

@@ -10,17 +10,13 @@
 <body>
   <%- include('navbar', { isLogin }) %>
   <section id="content">
-    <h1>SHOP</h1>
-    <div class="card-available">
-      <% cards.forEach(card => { %>
-        <div class="card">
-          <img src="<%= card.image %>" alt="Photo of <%= card.nameCapitalize %>">
-          <a href="/shop/buy/<%= card.id %>">
-            <div class="buy-btn">BUY</div>
-          </a>
-        </div>
-      <% }); %>
+    <div class="shop-title">
+      <h1>SHOP</h1>
+      <% if(error) { %>
+        <p>*<%= error %></p>
+      <% } %>
     </div>
+    <%- include('cards', { cards, shop: true }) %>
   </section>
 </body>
 </html>

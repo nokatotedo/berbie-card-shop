@@ -27,16 +27,50 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   UserProfile.init({
-    name: DataTypes.STRING,
-    balance: DataTypes.INTEGER,
-    image: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          args: true,
+          msg: "Name is required."
+        },
+        notEmpty: {
+          args: true,
+          msg: "Name is required."
+        }
+      }
+    },
+    balance: {
+      type: DataTypes.INTEGER,
+      validate: {
+        min: {
+          args: [0],
+          msg: "Out of balance."
+        }
+      }
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          args: true,
+          msg: "Image is required."
+        },
+        notEmpty: {
+          args: true,
+          msg: "Image is required."
+        }
+      }
+    },
     UserId: DataTypes.INTEGER
   }, {
     hooks: {
       beforeCreate: (user, _) => {
         user.name = user.name.toLowerCase()
-        user.balance = 200_000
-        user.image = `/images/profile_${generateRandom(1, 8)}.png`
+        user.balance = 20_000
+        if(!user.image) user.image = `/images/profile_${generateRandom(1, 8)}.png`
       }
     },
     sequelize,

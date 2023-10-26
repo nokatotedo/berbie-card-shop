@@ -43,3 +43,27 @@ input {
 p {
   color: var(--red);
 }
+
+.radio-btn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.radio-btn label img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.radio-btn .radio {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.radio input {
+  width: inherit;
+}

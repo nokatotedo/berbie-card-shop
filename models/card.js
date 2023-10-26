@@ -1,5 +1,5 @@
 'use strict';
-const { toCapitalize } = require('../helpers/helper')
+const { toIdr } = require('../helpers/helper')
 const {
   Model
 } = require('sequelize');
@@ -17,8 +17,8 @@ module.exports = (sequelize, DataTypes) => {
       })
     }
 
-    get nameCapitalize() {
-      return toCapitalize(this.name)
+    get priceIdr() {
+      return toIdr(this.price)
     }
   }
   Card.init({

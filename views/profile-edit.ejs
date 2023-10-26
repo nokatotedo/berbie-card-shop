@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include('setup') %>
+  <link rel="stylesheet" href="/styles/form-page.css">
+  <title>Edit - <%= user.nameCapitalize %></title>
+</head>
+<body>
+  <%- include('navbar', { isLogin }) %>
+  <section id="content">
+    <form method="post">
+      <h1>Edit</h1>
+      <div class="name">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="<%= user.nameCapitalize %>">
+      </div>
+      <div class="image">
+        <label for="image">Image</label>
+        <div class="radio-btn">
+          <% for (let i = 0; i < 8; i++) { %>
+            <div class="radio">
+              <input type="radio" name="image" id="<%= i+1 %>" <%= user.image === `/images/profile_${i+1}.png` ? "checked" : "" %> value="<%= `/images/profile_${i+1}.png` %>">
+              <label for="<%= i+1 %>"><img src="/images/profile_<%= i+1 %>.png" alt=""></label>
+            </div>
+          <% } %>
+        </div>
+      </div>
+      <% if(error) { %>
+        <div class="error">
+          <p>*<%= error %></p>
+        </div>
+      <% } %>
+      <input type="submit" value="UPDATE" id="btn">
+    </form>
+  </section>
+</body>
+</html>

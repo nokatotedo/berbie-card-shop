@@ -1,21 +1,9 @@
-.card-available {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-}
-.card img {
-  width: 150px;
-  height: 200px;
-  object-fit: cover;
-}
-
-#content h1 {
+.shop-title {
   margin-bottom: 10px;
+}
+
+.shop-title p {
+  color: var(--red);
 }
 
 .buy-btn {

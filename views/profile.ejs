@@ -28,7 +28,7 @@
           <div class="balance"><h3>Balance : <%= user.balanceIdr %></h3></div>
         </div>
         <div class="cards">
-          
+          <%- include('cards', { cards: user.Cards, shop: false }) %>
         </div>
       </div>
     </div>

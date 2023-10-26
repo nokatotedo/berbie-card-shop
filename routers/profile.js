@@ -3,5 +3,8 @@ const router = express.Router()
 const { Profile } = require('../controllers/controller')
 
 router.get('/', Profile.show)
+router.get('/edit', Profile.showEdit)
+router.post('/edit', Profile.updateUserProfile)
+router.get('/delete/:id', Profile.deleteCard)
 
 module.exports = router

@@ -18,7 +18,7 @@ class Login {
   static async login(req, res) {
     try {
       const user = await User.login(req.body)
-      req.session.UserId = user
+      req.session.UserId = user - 1
 
       res.redirect('/')
     } catch (error) {

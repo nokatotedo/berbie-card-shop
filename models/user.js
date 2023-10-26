@@ -65,6 +65,10 @@ module.exports = (sequelize, DataTypes) => {
           args: true,
           msg: "Username is required."
         },
+        notContains: {
+          args: ' ',
+          msg: "Spacebar not allowed."
+        },
         async notSame(value) {
           const usernameUser = await User.findOne({
             attributes: [
@@ -134,7 +138,8 @@ module.exports = (sequelize, DataTypes) => {
           msg: "Password need at least 8 characters."
         }
       }
-    }
+    },
+    role: DataTypes.STRING
   }, {
     hooks: {
       beforeCreate: (user, _) => {
@@ -144,6 +149,7 @@ module.exports = (sequelize, DataTypes) => {
         user.username = user.username.toLowerCase()
         user.email = user.email.toLowerCase()
         user.password = hash
+        if(user.role !== 'Admin') user.role = "User"
       }
     },
     sequelize,
