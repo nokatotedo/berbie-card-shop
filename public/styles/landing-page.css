@@ -51,7 +51,7 @@ body{
 
 
 .text-container {
-    background: linear-gradient(45deg, #181717, #4f1f1f);
+    background: linear-gradient(65deg, #461515,#ffff,#fff,#faf8f8, #4f1f1f);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -89,7 +89,7 @@ body{
     width: 300px;
     display: inline-block;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(45deg, #181717, #4f1f1f);
+    background: linear-gradient(65deg, #461515,#ffff,#fff,#faf8f8, #4f1f1f);
 }
 
 .card h2 {
