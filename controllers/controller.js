@@ -1,4 +1,8 @@
 const Login = require('./login')
+const Register = require('./register')
+const Profile = require('./profile')
+const Tournament = require('./tournament')
+const Shop = require('./shop')
 
 class Controller {
   static showLandingPage(_, res) {
@@ -12,5 +16,9 @@ class Controller {
 
 module.exports = {
   Controller,
-  Login
+  Login,
+  Register,
+  Profile,
+  Tournament,
+  Shop
 }
