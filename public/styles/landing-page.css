@@ -1,5 +1,5 @@
 body{
-    background-image: url('/assetsPhoto/Untitled\ design-2.png');
+    background-image: url('/assetsPhoto/Untitled\ design-3.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -70,6 +70,53 @@ body{
     font-size: 16px;
     line-height: 1.5;
     margin: 15px 0;
+}
+
+.breakline{
+    background-image: url('/assetsPhoto/Untitled\ design-3.png');
+}
+
+
+/* untuk kartu */
+
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+}
+
+
+/* footer */
+
+/* CSS class for a footer */
+.footer {
+    background-color: #d39999; 
+    color: #fffdfd;
+    padding: 20px; 
+    text-align: center;
+}
+
+.footer a {
+    color: #fff; 
+    text-decoration: none; 
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }
 
 
