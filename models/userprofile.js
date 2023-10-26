@@ -31,9 +31,11 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     hooks: {
       beforeCreate: (user, _) => {
+        const images = Math.floor(Math.random() * 8) + 1
+
         user.name = user.name.toLowerCase()
         user.balance = 200_000
-        user.image = "https://i.pinimg.com/474x/21/04/20/210420f6b57fc3d89f6a10a972f60287.jpg"
+        user.image = `/images/profile_${images}.png`
       }
     },
     sequelize,

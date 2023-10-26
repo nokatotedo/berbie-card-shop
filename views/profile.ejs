@@ -12,14 +12,23 @@
   <section id="content">
     <div class="card">
       <div class="card-header"></div>
-      <div class="image-header">
-        <div class="image">
-          <img src="<%= user.image %>" alt="Photo of <%= user.nameCapitalize %>">
+      <div class="card-content">
+        <div class="image-header">
+          <div class="image">
+            <img src="<%= user.image %>" alt="Photo of <%= user.nameCapitalize %>">
+          </div>
+          <div class="btn-edit">
+            <a href="/profile/edit">
+              <div class="btn">Edit Profile</div>
+            </a>
+          </div>
         </div>
-        <div class="btn-edit">
-          <a href="/profile/edit">
-            <div class="btn">Edit Profile</div>
-          </a>
+        <div class="description">
+          <div class="name"><h1><%= user.nameCapitalize %></h1></div>
+          <div class="balance"><h3>Balance : <%= user.balanceIdr %></h3></div>
+        </div>
+        <div class="cards">
+          
         </div>
       </div>
     </div>
