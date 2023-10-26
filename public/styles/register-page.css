@@ -7,7 +7,7 @@
     height: 80px;
     display: inline-block;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-    background-image: url('/assetsPhoto/barbieIcon.jpeg'); 
+    background-image: url('/assetsPhoto/Untitled\ design-4.png'); 
     background-size: cover;  
 }
 
@@ -26,4 +26,11 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     color: var(--white);
+}
+
+.formStyle{
+    width: 120px; 
+    height: 40px; 
+    background: linear-gradient(45deg,#fff, #f6f4f4, #571818, #ffff, #ffff);
+    color: rgb(244, 242, 242);
 }
