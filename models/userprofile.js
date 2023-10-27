@@ -67,10 +67,12 @@ module.exports = (sequelize, DataTypes) => {
     UserId: DataTypes.INTEGER
   }, {
     hooks: {
+      beforeValidate: (user, _) => {
+        if(!user.image) user.image = `/images/profile_${generateRandom(1, 8)}.png`
+      },
       beforeCreate: (user, _) => {
         user.name = user.name.toLowerCase()
         user.balance = 20_000
-        if(!user.image) user.image = `/images/profile_${generateRandom(1, 8)}.png`
       }
     },
     sequelize,
