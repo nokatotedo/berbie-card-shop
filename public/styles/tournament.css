@@ -1,0 +1,12 @@
+section {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-image: url('/images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

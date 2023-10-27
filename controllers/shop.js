@@ -4,23 +4,34 @@ const { Op } = require('sequelize')
 class Shop {
   static async show(req, res) {
     try {
-      const cards = await Card.findAll({
+      const isLogin = req.session.UserId
+      const error = req.query.error
+      const sort = req.query.sort
+
+      const query = {
         where: {
           stock: {
             [Op.gt]: 0
           }
-        }
-      })
+        },
+        order: [
+          "id"
+        ]
+      }
 
-      const isLogin = req.session.UserId
-      const error = req.query.error
+      if(sort === "name") query.order.unshift(sort)
+      if(sort !== "name" && sort !== undefined) query.order.unshift([sort, 'DESC'])
+
+      const cards = await Card.findAll(query)
 
       res.render('shop', {
         cards,
         isLogin,
-        error
+        error,
+        sort
       })
     } catch (error) {
+      console.log(error)
       res.send(error)
     }
   }

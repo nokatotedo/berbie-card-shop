@@ -1,4 +1,5 @@
 const { UserProfile, Card, UserCard } = require('../models/index')
+const puppeteer = require('puppeteer')
 
 class Profile {
   static async show(req, res) {
@@ -8,7 +9,12 @@ class Profile {
         where: {
           id: UserId
         },
-        include: Card
+        include: {
+          model: Card,
+          order: [
+            "id"
+          ]
+        }
       })
 
       res.render('profile', {
@@ -87,6 +93,60 @@ class Profile {
       res.redirect('/profile')
     } catch (error) {
       res.send(error)
+    }
+  }
+
+  static async printProfile(req, res) {
+    try {
+      const UserId = req.session.UserId
+      const browser = await puppeteer.launch({ headless: true })
+      const page = await browser.newPage()
+      page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 1})
+
+      await page.goto(`http://localhost:3000/print/process?id=${UserId}`)
+      await page.pdf({
+        path: './public/pdfs/print.pdf',
+        format: 'a4',
+        margin: {
+          top: '70px',
+          bottom: '70px',
+          right: '20px',
+          left: '20px'
+        }
+      })
+      await browser.close()
+
+      res.redirect('/pdfs/print.pdf')
+    } catch (error) {
+      console.log(error)
+      res.send(error)
+    }
+  }
+  
+  static async print(req, res) {
+    try {
+      const UserId = +req.query.id
+      if(isNaN(UserId)) {
+        throw 'Redirect'
+      }
+
+      const user = await UserProfile.findOne({
+        where: {
+          id: UserId
+        },
+        include: {
+          model: Card,
+          order: [
+            "id"
+          ]
+        }
+      })
+
+      res.render('print', {
+        user
+      })
+    } catch (error) {
+      res.redirect('/login')
     }
   }
 }

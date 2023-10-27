@@ -12,6 +12,21 @@
   <section id="content">
     <div class="shop-title">
       <h1>SHOP</h1>
+      <div class="sort">
+        <h4>SORT</h4>
+        <a href="/shop?sort=name" class="<%= sort === "name" ? "active" : ""  %>">
+          <div class="btn <%= sort === "name" ? "active" : ""  %>">NAME</div>
+        </a>
+        <a href="/shop?sort=atk" class="<%= sort === "atk" ? "active" : ""  %>">
+          <div class="btn <%= sort === "atk" ? "active" : ""  %>">ATK</div>
+        </a>
+        <a href="/shop?sort=def" class="<%= sort === "def" ? "active" : ""  %>">
+          <div class="btn <%= sort === "def" ? "active" : ""  %>">DEF</div>
+        </a>
+        <a href="/shop?sort=price" class="<%= sort === "price" ? "active" : ""  %>">
+          <div class="btn <%= sort === "price" ? "active" : ""  %>">PRICE</div>
+        </a>
+      </div>
       <% if(error) { %>
         <p>*<%= error %></p>
       <% } %>

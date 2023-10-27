@@ -1,5 +1,8 @@
 .shop-title {
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .shop-title p {
@@ -34,4 +37,32 @@
 
 .buy-btn:hover::after {
   transform: scaleX(1);
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort > a {
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+}
+
+.sort .btn {
+  color: var(--primary);
+  width: 100%;
+  padding: 0 20px;
+  transition: 0.2s;
+}
+
+.sort .btn:hover {
+  color: white;
+  background-color: var(--primary);
+}
+
+.sort .active {
+  color: white;
+  background-color: var(--primary);
 }

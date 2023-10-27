@@ -8,22 +8,13 @@
   <title>Profile - <%= user.nameCapitalize %></title>
 </head>
 <body>
-  <%- include('navbar', { isLogin: user.name }) %>
   <section id="content">
-    <div class="card">
+    <div>
       <div class="card-header"></div>
       <div class="card-content">
         <div class="image-header">
           <div class="image">
             <img src="<%= user.image %>" alt="Photo of <%= user.nameCapitalize %>">
-          </div>
-          <div class="btn-edit-print">
-            <a href="/profile/edit">
-              <div class="btn">Edit Profile</div>
-            </a>
-            <a href="/profile/print">
-              <div class="btn">Print Profile</div>
-            </a>
           </div>
         </div>
         <div class="description">
@@ -31,7 +22,19 @@
           <div class="balance"><h3>Balance : <%= user.balanceIdr %></h3></div>
         </div>
         <div class="cards">
-          <%- include('cards', { cards: user.Cards, shop: false }) %>
+          <link rel="stylesheet" href="/styles/cards.css">
+          <div class="card-available">
+            <% user.Cards.forEach(card => { %>
+              <div class="card">
+                <h4><div class="name"><%= card.name %></div></h4>
+                <img src="<%= card.image %>" alt="Photo of <%= card.name %>">
+                <div class="statistic">
+                  <div class="atk">ATK <%= card.atk %></div>
+                  <div class="def">DEF <%= card.def %></div>
+                </div>
+              </div>
+            <% }); %>
+          </div>
         </div>
       </div>
     </div>

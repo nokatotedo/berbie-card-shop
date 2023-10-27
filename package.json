@@ -24,6 +24,7 @@
     "express-session": "^1.17.3",
     "pg": "^8.11.3",
     "pg-hstore": "^2.3.4",
+    "puppeteer": "^21.4.1",
     "sequelize": "^6.33.0"
   },
   "devDependencies": {

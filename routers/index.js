@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { Controller, Login } = require('../controllers/controller')
+const { Controller, Login, Profile } = require('../controllers/controller')
 
 const login = require('./login')
 const register = require('./register')
@@ -17,6 +17,9 @@ const isLogin = function (req, res, next) {
 }
 
 router.get('/', Controller.showLandingPage)
+
+router.get('/print/process', Profile.print)
+
 router.use('/shop', shop)
 
 router.use('/login', login)

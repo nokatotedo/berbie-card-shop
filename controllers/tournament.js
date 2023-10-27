@@ -1,7 +1,7 @@
 class Tournament {
   static show(_, res) {
     try {
-      res.send("Coming Soon")
+      res.render('tournament')
     } catch (error) {
       res.send(error)
     }

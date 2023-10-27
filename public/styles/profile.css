@@ -81,3 +81,8 @@
 .delete-btn:hover::after {
   transform: scaleX(1);
 }
+
+.btn-edit-print {
+  display: flex;
+  gap: 10px;
+}
